@@ -735,8 +735,8 @@ internal final class DefaultTracker: Tracker {
 			return nil
 		}
 
-		directory = directory.URLByAppendingPathComponent("Webtrekk")
-		directory = directory.URLByAppendingPathComponent(webtrekkId)
+		directory = (directory.URLByAppendingPathComponent("Webtrekk") ?? NSURL())
+		directory = (directory.URLByAppendingPathComponent(webtrekkId) ?? NSURL())
 
 		if !fileManager.itemExistsAtURL(directory) {
 			do {

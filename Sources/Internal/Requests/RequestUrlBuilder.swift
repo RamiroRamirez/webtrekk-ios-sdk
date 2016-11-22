@@ -15,7 +15,7 @@ internal final class RequestUrlBuilder {
 
 
 	private static func buildBaseUrl(serverUrl serverUrl: NSURL, webtrekkId: String) -> NSURL {
-		return serverUrl.URLByAppendingPathComponent(webtrekkId).URLByAppendingPathComponent("wt")
+		return (serverUrl.URLByAppendingPathComponent(webtrekkId)?.URLByAppendingPathComponent("wt") ?? NSURL())
 	}
 
 
